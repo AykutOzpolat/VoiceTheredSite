@@ -18,18 +18,95 @@
       <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1a7 7 0 0 1 14 0v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z"/></svg>
       <span>VoiceThered</span>
     </div>
-    <a href="#download" class="nav-download">Download</a>
   </nav>
 
   <main>
     <section class="hero">
       <h1>Talk together.<br/>No hassle.</h1>
-      <p class="hero-sub">Free voice chat with crystal clear audio, screen sharing, and text chat. Built for groups who just want to talk.</p>
+      <p class="hero-sub">Free voice chat with crystal clear audio, screen sharing, and text chat. Lightweight alternative to Discord — no bloat, no tracking.</p>
       <div class="hero-actions">
-        <a href="#download" class="btn-primary">
+        <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered.Setup.1.0.8.exe" class="btn-primary">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           Download for Windows
         </a>
+        <span class="download-note">Windows 10 or later</span>
+      </div>
+    </section>
+
+    <!-- Theme showcase -->
+    <section class="themes-section">
+      <h2>Make it yours</h2>
+      <p class="themes-sub">8 built-in themes. Pick the vibe that fits you.</p>
+
+      <div class="theme-showcase">
+        <div class="theme-pills" id="theme-pills"></div>
+
+        <div class="app-mockup" id="app-mockup">
+          <!-- Sidebar -->
+          <div class="mock-sidebar">
+            <div class="mock-sidebar-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.7"><path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1a7 7 0 0 1 14 0v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z"/></svg>
+              <span>VoiceThered</span>
+            </div>
+            <div class="mock-user mock-user-active">
+              <div class="mock-avatar"></div>
+              <span>Alice</span>
+              <div class="mock-speaking"></div>
+            </div>
+            <div class="mock-user">
+              <div class="mock-avatar"></div>
+              <span>Bob</span>
+            </div>
+            <div class="mock-user">
+              <div class="mock-avatar"></div>
+              <span>Charlie</span>
+            </div>
+            <div class="mock-controls">
+              <div class="mock-ctrl-btn mock-ctrl-mic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/></svg>
+              </div>
+              <div class="mock-ctrl-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+              </div>
+              <div class="mock-ctrl-btn mock-ctrl-leave">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08a.956.956 0 0 1 0-1.36C3.69 8.68 7.65 7 12 7s8.31 1.68 11.71 4.72c.38.36.38.96 0 1.36l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.11-.7-.28a11.27 11.27 0 0 0-2.67-1.85.996.996 0 0 1-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"/></svg>
+              </div>
+            </div>
+          </div>
+          <!-- Chat area -->
+          <div class="mock-chat">
+            <div class="mock-chat-header">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.5"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+              <span>Chat</span>
+            </div>
+            <div class="mock-messages">
+              <div class="mock-msg">
+                <div class="mock-msg-avatar" style="background: #8b5cf6"></div>
+                <div class="mock-msg-body">
+                  <span class="mock-msg-name">Alice</span>
+                  <span class="mock-msg-text">Hey, can everyone hear me ok?</span>
+                </div>
+              </div>
+              <div class="mock-msg">
+                <div class="mock-msg-avatar" style="background: #f97316"></div>
+                <div class="mock-msg-body">
+                  <span class="mock-msg-name">Bob</span>
+                  <span class="mock-msg-text">Yep, loud and clear!</span>
+                </div>
+              </div>
+              <div class="mock-msg">
+                <div class="mock-msg-avatar" style="background: #10b981"></div>
+                <div class="mock-msg-body">
+                  <span class="mock-msg-name">Charlie</span>
+                  <span class="mock-msg-text">Sounds great 🔥</span>
+                </div>
+              </div>
+            </div>
+            <div class="mock-input">
+              <span>Write a message...</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -56,16 +133,6 @@
         <p>Send messages, share files, and react with emojis alongside your voice calls.</p>
       </div>
     </section>
-
-    <section id="download" class="download">
-      <h2>Get VoiceThered</h2>
-      <p>Free to use. No account selling, no ads.</p>
-      <a href="/VoiceThered-Setup.exe" class="btn-primary btn-large">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-        Download for Windows
-      </a>
-      <span class="download-note">Windows 10 or later</span>
-    </section>
   </main>
 
   <footer>
@@ -74,5 +141,51 @@
       <span>VoiceThered</span>
     </div>
   </footer>
+
+  <script>
+    const themes = [
+      { id: "obsidian",   name: "Obsidian",   emoji: "🖤", bg: "#0a0a0c", bgDark: "#131316", bgMed: "#1a1a1f", bgLight: "#242429", text: "#e8e6f0", textSec: "#a9a6b8", textMuted: "#7b7890", accent: "#8b5cf6", border: "rgba(255,255,255,0.08)" },
+      { id: "synthwave",  name: "Synthwave",  emoji: "🌆", bg: "#0f0620", bgDark: "#170a30", bgMed: "#1e1040", bgLight: "#2a1654", text: "#f0e6ff", textSec: "#c4a8ff", textMuted: "#9070d0", accent: "#ff2de0", border: "rgba(255,255,255,0.08)" },
+      { id: "terminal",   name: "Terminal",   emoji: "💻", bg: "#000000", bgDark: "#0a0a0a", bgMed: "#111111", bgLight: "#1a1a1a", text: "#00ff41", textSec: "#00cc33", textMuted: "#009926", accent: "#00ff41", border: "rgba(0,255,65,0.15)" },
+      { id: "sakura",     name: "Sakura",     emoji: "🌸", bg: "#f5e6ed", bgDark: "#fdf0f5", bgMed: "#fff7fa", bgLight: "#fce8f0", text: "#3d1f2e", textSec: "#6b4456", textMuted: "#8c6577", accent: "#e84393", border: "rgba(0,0,0,0.1)" },
+      { id: "arctic",     name: "Arctic",     emoji: "🧊", bg: "#dce8f0", bgDark: "#e8f1f8", bgMed: "#f0f7fc", bgLight: "#e0ecf5", text: "#1a2e3d", textSec: "#3d5a6e", textMuted: "#5e7f93", accent: "#0891b2", border: "rgba(0,0,0,0.1)" },
+      { id: "sunset",     name: "Sunset",     emoji: "🌅", bg: "#1a0f0a", bgDark: "#261812", bgMed: "#30201a", bgLight: "#3d2a22", text: "#fde8d8", textSec: "#d4a88a", textMuted: "#a87860", accent: "#f97316", border: "rgba(255,255,255,0.08)" },
+      { id: "cyberpunk",  name: "Cyberpunk",  emoji: "⚡",  bg: "#0c0c14", bgDark: "#12121e", bgMed: "#1a1a2e", bgLight: "#24243a", text: "#eaf0ff", textSec: "#a8b4d0", textMuted: "#6874a0", accent: "#fcee09", border: "rgba(255,255,255,0.08)" },
+      { id: "coffee",     name: "Coffee",     emoji: "☕",  bg: "#1b1410", bgDark: "#251c16", bgMed: "#2e2420", bgLight: "#3a2e28", text: "#f0e6dc", textSec: "#c4a882", textMuted: "#9a7e5c", accent: "#d4915e", border: "rgba(255,255,255,0.08)" },
+    ];
+
+    const pills = document.getElementById("theme-pills");
+    const mockup = document.getElementById("app-mockup");
+    let activeId = "obsidian";
+
+    themes.forEach(t => {
+      const pill = document.createElement("button");
+      pill.className = "theme-pill" + (t.id === activeId ? " active" : "");
+      pill.innerHTML = `<span class="pill-dot" style="background:${t.accent}"></span>${t.name}`;
+      pill.onclick = () => applyTheme(t.id);
+      pills.appendChild(pill);
+    });
+
+    function applyTheme(id) {
+      const t = themes.find(x => x.id === id);
+      if (!t) return;
+      activeId = id;
+
+      mockup.style.setProperty("--m-bg", t.bg);
+      mockup.style.setProperty("--m-bg-dark", t.bgDark);
+      mockup.style.setProperty("--m-bg-med", t.bgMed);
+      mockup.style.setProperty("--m-bg-light", t.bgLight);
+      mockup.style.setProperty("--m-text", t.text);
+      mockup.style.setProperty("--m-text-sec", t.textSec);
+      mockup.style.setProperty("--m-text-muted", t.textMuted);
+      mockup.style.setProperty("--m-accent", t.accent);
+      mockup.style.setProperty("--m-border", t.border);
+
+      document.querySelectorAll(".theme-pill").forEach(p => p.classList.remove("active"));
+      document.querySelectorAll(".theme-pill")[themes.findIndex(x => x.id === id)].classList.add("active");
+    }
+
+    applyTheme("obsidian");
+  </script>
 </body>
 </html>
