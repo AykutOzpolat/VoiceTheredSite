@@ -4,13 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VoiceThered - Voice Chat for Groups</title>
-  <meta name="description" content="Free voice chat app for groups. Crystal clear audio, screen sharing, and text chat. Download for Windows." />
+  <meta name="description" content="Free voice chat app for groups. Crystal clear audio, screen sharing, and text chat. Currently in development." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="dev-banner">
+    🚧 VoiceThered is currently under active development. Some features may not be available yet.
+  </div>
+
   <div class="bg-glow"></div>
 
   <nav>
@@ -18,18 +22,24 @@
       <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1a7 7 0 0 1 14 0v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z"/></svg>
       <span>VoiceThered</span>
     </div>
+    <span class="nav-status">In Development</span>
   </nav>
 
   <main>
     <section class="hero">
       <h1>Talk together.<br/>No hassle.</h1>
       <p class="hero-sub">Free voice chat with crystal clear audio, screen sharing, and text chat. Lightweight alternative to Discord — no bloat, no tracking.</p>
+      
       <div class="hero-actions">
-        <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered.Setup.1.0.8.exe" class="btn-primary">
+        <button class="btn-primary disabled" disabled aria-label="Download coming soon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           Download for Windows
-        </a>
-        <span class="download-note">Windows 10 or later</span>
+          <span style="margin-left: 0.5rem; font-size: 0.75rem; opacity: 0.8;">(Soon)</span>
+        </button>
+        
+        <div class="coming-soon-badge">
+          <span>🚀</span> Coming Soon
+        </div>
       </div>
     </section>
 
@@ -140,6 +150,7 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1a7 7 0 0 1 14 0v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z"/></svg>
       <span>VoiceThered</span>
     </div>
+    <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;">© 2026 VoiceThered. Built with care.</p>
   </footer>
 
   <script>
