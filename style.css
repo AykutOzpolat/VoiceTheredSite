@@ -130,16 +130,17 @@
       font-size: 1rem;
       transition: all 0.2s;
       border: none;
-      cursor: not-allowed;
-      opacity: 0.5;
+      cursor: pointer;
       position: relative;
     }
 
-    .btn-primary:disabled {
+    .btn-primary:disabled,
+    .btn-primary.disabled {
       background: #4b5563;
       cursor: not-allowed;
       transform: none;
       box-shadow: none;
+      opacity: 0.5;
     }
 
     .btn-primary:hover {
