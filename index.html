@@ -3,11 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VoiceThered - Voice Chat for Groups</title>
-  <meta name="description" content="Free voice chat app for groups. Crystal clear audio, screen sharing, and text chat. Currently in development." />
+  <title>VoiceThered — Stay Connected. Crystal-Clear Voice Chat for Groups.</title>
+  <meta name="description" content="Free, lightweight voice chat for friends and teams. Crystal-clear audio, screen sharing, text chat. No bloat. No tracking." />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="mask-icon" href="favicon.svg" color="#f43f5e" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:title" content="VoiceThered — Stay Connected" />
+  <meta property="og:description" content="Free, lightweight voice chat for groups. Crystal-clear audio, screen sharing, text chat. No bloat. No tracking." />
+  <meta property="og:image" content="voicethered_v2.svg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,29 +31,39 @@
   <div class="bg-glow"></div>
 
   <nav>
-    <div class="nav-brand">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1a7 7 0 0 1 14 0v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z"/></svg>
-      <span>VoiceThered</span>
-    </div>
+    <a href="#" class="nav-brand" aria-label="VoiceThered home">
+      <svg class="brand-mark" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"
+              fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="3.2" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
+    </a>
     <span class="nav-status">In Development</span>
   </nav>
 
   <main>
     <section class="hero">
-      <h1>Talk together.<br/>No hassle.</h1>
-      <p class="hero-sub">Free voice chat with crystal clear audio, screen sharing, and text chat. Lightweight alternative to Discord — no bloat, no tracking.</p>
-        <!-- <button class="btn-primary disabled" disabled aria-label="Download coming soon"> -->
-      
+      <span class="hero-eyebrow">Stay Connected</span>
+      <h1>Voice chat that<br/><span class="h1-accent">JUST WORKS.</span></h1>
+      <p class="hero-sub">Crystal-clear audio, screen sharing, and text chat — in one lightweight app. No bloat. No tracking.</p>
+
       <div class="hero-actions">
-        <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary" aria-label="Download for Windows">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary" aria-label="Download VoiceThered for Windows">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           Download for Windows
+          <span class="btn-meta">Free · v1.0.8</span>
         </a>
-        
-        <div class="coming-soon-badge">
-          <span>🚀</span> Coming Soon
+
+        <div class="hero-secondary">
+          <span class="platform-note">macOS &amp; Linux coming soon</span>
         </div>
       </div>
+
+      <ul class="trust-row" aria-label="Key differentiators">
+        <li><span class="trust-dot"></span>100% free</li>
+        <li><span class="trust-dot"></span>Zero tracking</li>
+      </ul>
     </section>
 
     <!-- Theme showcase -->
@@ -55,7 +78,7 @@
           <!-- Sidebar -->
           <div class="mock-sidebar">
             <div class="mock-sidebar-header">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.7"><path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1a7 7 0 0 1 14 0v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z"/></svg>
+              <svg width="16" height="16" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" style="opacity:0.85"><path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"/><circle cx="20" cy="20" r="3.2" fill="currentColor" stroke="none"/></svg>
               <span>VoiceThered</span>
             </div>
             <div class="mock-user mock-user-active">
@@ -125,32 +148,42 @@
         <div class="feature-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm-1-9a1 1 0 0 1 2 0v6a1 1 0 0 1-2 0V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
         </div>
-        <h3>Voice Chat</h3>
-        <p>Low-latency, high-quality audio. Just join a channel and start talking.</p>
+        <h3>Crystal-clear voice</h3>
+        <p>Low-latency, high-quality audio. Join a channel and start talking — no setup dance.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
         </div>
-        <h3>Screen Sharing</h3>
-        <p>Share your screen with one click. Perfect for gaming, working, or just hanging out.</p>
+        <h3>One-click screen share</h3>
+        <p>Share your screen instantly. Perfect for gaming, co-working, or movie nights with friends.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
         </div>
-        <h3>Text Chat</h3>
-        <p>Send messages, share files, and react with emojis alongside your voice calls.</p>
+        <h3>Text chat, built in</h3>
+        <p>Send messages, drop files, and react with emoji — right alongside your voice calls.</p>
       </div>
+    </section>
+
+    <section class="cta-band">
+      <h2>Ready to get the group back together?</h2>
+      <p>One download. Start talking in under a minute.</p>
+      <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary" aria-label="Download VoiceThered for Windows">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Download VoiceThered
+      </a>
     </section>
   </main>
 
   <footer>
     <div class="footer-brand">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1a7 7 0 0 1 14 0v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z"/></svg>
-      <span>VoiceThered</span>
+      <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"/><circle cx="20" cy="20" r="3.2" fill="currentColor" stroke="none"/></svg>
+      <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
     </div>
-    <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.6;">© 2026 VoiceThered. Built with care.</p>
+    <p class="footer-tagline">Stay connected.</p>
+    <p class="footer-copy">© 2026 VoiceThered · Built with care</p>
   </footer>
 
   <script>
