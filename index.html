@@ -39,8 +39,69 @@
       </svg>
       <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
     </a>
-    <span class="nav-status">In Development</span>
+    <div class="nav-right">
+      <span class="nav-status">In Development</span>
+      <button class="btn-login" id="open-login">Log In</button>
+      <button class="btn-register" id="open-register">Create Account</button>
+      <span class="nav-user hidden" id="nav-user"></span>
+      <button class="btn-logout hidden" id="btn-logout">Log Out</button>
+    </div>
   </nav>
+
+  <!-- Register Modal -->
+  <div class="modal-overlay hidden" id="register-modal">
+    <div class="modal">
+      <button class="modal-close" id="close-register" aria-label="Close">&times;</button>
+      <h2 class="modal-title">Create your account</h2>
+      <p class="modal-sub">Join VoiceThered — it's free.</p>
+      <form id="register-form" autocomplete="off">
+        <div class="form-group">
+          <label for="reg-display">Display Name</label>
+          <input type="text" id="reg-display" placeholder="How others see you" maxlength="32" required />
+        </div>
+        <div class="form-group">
+          <label for="reg-tag">Unique Tag</label>
+          <input type="text" id="reg-tag" placeholder="your-unique-tag" maxlength="32" required />
+          <span class="form-hint">Used to find you — like a username</span>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email</label>
+          <input type="email" id="reg-email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" placeholder="Min 6 characters" minlength="6" required />
+        </div>
+        <div id="reg-error" class="form-error hidden"></div>
+        <div id="reg-success" class="form-success hidden"></div>
+        <button type="submit" class="btn-primary btn-submit" id="reg-submit">
+          Create Account
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal-overlay hidden" id="login-modal">
+    <div class="modal">
+      <button class="modal-close" id="close-login" aria-label="Close">&times;</button>
+      <h2 class="modal-title">Welcome back</h2>
+      <p class="modal-sub">Log in to download VoiceThered.</p>
+      <form id="login-form" autocomplete="off">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Your password" required />
+        </div>
+        <div id="login-error" class="form-error hidden"></div>
+        <button type="submit" class="btn-primary btn-submit" id="login-submit">Log In</button>
+        <p class="form-switch">Don't have an account? <a href="#" id="switch-to-register">Create one</a></p>
+      </form>
+    </div>
+  </div>
 
   <main>
     <section class="hero">
@@ -49,7 +110,14 @@
       <p class="hero-sub">Crystal-clear audio, screen sharing, and text chat — in one lightweight app. No bloat. No tracking.</p>
 
       <div class="hero-actions">
-        <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary" aria-label="Download VoiceThered for Windows">
+        <!-- Locked: shown when not logged in -->
+        <button class="btn-primary btn-download-locked" id="download-locked" aria-label="Log in to download">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>
+          Log in to Download
+          <span class="btn-meta">Free · v1.0.8</span>
+        </button>
+        <!-- Unlocked: shown after login -->
+        <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary hidden" id="download-unlocked" aria-label="Download VoiceThered for Windows">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           Download for Windows
           <span class="btn-meta">Free · v1.0.8</span>
@@ -169,8 +237,12 @@
 
     <section class="cta-band">
       <h2>Ready to get the group back together?</h2>
-      <p>One download. Start talking in under a minute.</p>
-      <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary" aria-label="Download VoiceThered for Windows">
+      <p id="cta-sub">Log in to download. Start talking in under a minute.</p>
+      <button class="btn-primary btn-download-locked" id="cta-download-locked" aria-label="Log in to download">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>
+        Log in to Download
+      </button>
+      <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary hidden" id="cta-download-unlocked" aria-label="Download VoiceThered for Windows">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
         Download VoiceThered
       </a>
@@ -230,6 +302,150 @@
     }
 
     applyTheme("obsidian");
+
+    // Auth state
+    const navUser = document.getElementById("nav-user");
+    const btnLogout = document.getElementById("btn-logout");
+    const openLogin = document.getElementById("open-login");
+    const openRegister = document.getElementById("open-register");
+    const downloadLocked = document.getElementById("download-locked");
+    const downloadUnlocked = document.getElementById("download-unlocked");
+    const ctaLocked = document.getElementById("cta-download-locked");
+    const ctaUnlocked = document.getElementById("cta-download-unlocked");
+    const ctaSub = document.getElementById("cta-sub");
+
+    function setLoggedIn(displayName) {
+      sessionStorage.setItem("vt_user", displayName);
+      navUser.textContent = displayName;
+      navUser.classList.remove("hidden");
+      btnLogout.classList.remove("hidden");
+      openLogin.classList.add("hidden");
+      openRegister.classList.add("hidden");
+      downloadLocked.classList.add("hidden");
+      downloadUnlocked.classList.remove("hidden");
+      ctaLocked.classList.add("hidden");
+      ctaUnlocked.classList.remove("hidden");
+      ctaSub.textContent = "One download. Start talking in under a minute.";
+    }
+
+    function setLoggedOut() {
+      sessionStorage.removeItem("vt_user");
+      navUser.classList.add("hidden");
+      btnLogout.classList.add("hidden");
+      openLogin.classList.remove("hidden");
+      openRegister.classList.remove("hidden");
+      downloadLocked.classList.remove("hidden");
+      downloadUnlocked.classList.add("hidden");
+      ctaLocked.classList.remove("hidden");
+      ctaUnlocked.classList.add("hidden");
+      ctaSub.textContent = "Log in to download. Start talking in under a minute.";
+    }
+
+    // Restore session
+    const savedUser = sessionStorage.getItem("vt_user");
+    if (savedUser) setLoggedIn(savedUser);
+
+    btnLogout.onclick = () => setLoggedOut();
+
+    // Locked download buttons open login modal
+    downloadLocked.onclick = () => loginModal.classList.remove("hidden");
+    ctaLocked.onclick = () => loginModal.classList.remove("hidden");
+
+    // Login modal
+    const loginModal = document.getElementById("login-modal");
+    const closeLogin = document.getElementById("close-login");
+    const loginForm = document.getElementById("login-form");
+    const loginError = document.getElementById("login-error");
+    const loginSubmit = document.getElementById("login-submit");
+    const switchToRegister = document.getElementById("switch-to-register");
+
+    openLogin.onclick = () => loginModal.classList.remove("hidden");
+    closeLogin.onclick = () => loginModal.classList.add("hidden");
+    loginModal.onclick = (e) => { if (e.target === loginModal) loginModal.classList.add("hidden"); };
+
+    switchToRegister.onclick = (e) => {
+      e.preventDefault();
+      loginModal.classList.add("hidden");
+      registerModal.classList.remove("hidden");
+    };
+
+    loginForm.onsubmit = async (e) => {
+      e.preventDefault();
+      loginError.classList.add("hidden");
+      loginSubmit.disabled = true;
+      loginSubmit.textContent = "Logging in...";
+
+      const payload = {
+        email: document.getElementById("login-email").value.trim(),
+        password: document.getElementById("login-password").value,
+      };
+
+      try {
+        const res = await fetch("https://api.voicethered.com/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || data.error || "Login failed");
+        loginModal.classList.add("hidden");
+        loginForm.reset();
+        setLoggedIn(data.displayName || data.user?.displayName || payload.email);
+      } catch (err) {
+        loginError.textContent = err.message;
+        loginError.classList.remove("hidden");
+      } finally {
+        loginSubmit.disabled = false;
+        loginSubmit.textContent = "Log In";
+      }
+    };
+
+    // Register modal
+    const registerModal = document.getElementById("register-modal");
+    const openBtn = document.getElementById("open-register");
+    const closeBtn = document.getElementById("close-register");
+    const regForm = document.getElementById("register-form");
+    const regError = document.getElementById("reg-error");
+    const regSuccess = document.getElementById("reg-success");
+    const regSubmit = document.getElementById("reg-submit");
+
+    openBtn.onclick = () => registerModal.classList.remove("hidden");
+    closeBtn.onclick = () => registerModal.classList.add("hidden");
+    registerModal.onclick = (e) => { if (e.target === registerModal) registerModal.classList.add("hidden"); };
+
+    regForm.onsubmit = async (e) => {
+      e.preventDefault();
+      regError.classList.add("hidden");
+      regSuccess.classList.add("hidden");
+      regSubmit.disabled = true;
+      regSubmit.textContent = "Creating...";
+
+      const payload = {
+        displayName: document.getElementById("reg-display").value.trim(),
+        uniqueTag: document.getElementById("reg-tag").value.trim(),
+        email: document.getElementById("reg-email").value.trim(),
+        password: document.getElementById("reg-password").value,
+      };
+
+      try {
+        const res = await fetch("https://api.voicethered.com/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.message || data.error || "Registration failed");
+        regSuccess.textContent = "Account created! You can now log in to download the app.";
+        regSuccess.classList.remove("hidden");
+        regForm.reset();
+      } catch (err) {
+        regError.textContent = err.message;
+        regError.classList.remove("hidden");
+      } finally {
+        regSubmit.disabled = false;
+        regSubmit.textContent = "Create Account";
+      }
+    };
   </script>
 </body>
 </html>
