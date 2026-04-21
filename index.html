@@ -110,13 +110,15 @@
       <p class="hero-sub">Crystal-clear audio, screen sharing, and text chat — in one lightweight app. No bloat. No tracking.</p>
 
       <div class="hero-actions">
-        <!-- Locked: shown when not logged in -->
-        <button class="btn-primary btn-download-locked" id="download-locked" aria-label="Log in to download">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>
-          Log in to Download
-          <span class="btn-meta">Free · v1.0.8</span>
-        </button>
-        <!-- Unlocked: shown after login -->
+        <!-- Logged out: prompt to log in -->
+        <div class="download-gate" id="download-gate">
+          <p class="download-gate-text">Create an account and log in to download the client.</p>
+          <div class="download-gate-buttons">
+            <button class="btn-primary" id="gate-login">Log In</button>
+            <button class="btn-ghost" id="gate-register">Create Account</button>
+          </div>
+        </div>
+        <!-- Logged in: actual download -->
         <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary hidden" id="download-unlocked" aria-label="Download VoiceThered for Windows">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           Download for Windows
@@ -237,11 +239,11 @@
 
     <section class="cta-band">
       <h2>Ready to get the group back together?</h2>
-      <p id="cta-sub">Log in to download. Start talking in under a minute.</p>
-      <button class="btn-primary btn-download-locked" id="cta-download-locked" aria-label="Log in to download">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>
-        Log in to Download
-      </button>
+      <p id="cta-sub">Create an account and log in to get started.</p>
+      <div class="cta-gate" id="cta-gate">
+        <button class="btn-primary" id="cta-gate-login">Log In</button>
+        <button class="btn-ghost" id="cta-gate-register">Create Account</button>
+      </div>
       <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary hidden" id="cta-download-unlocked" aria-label="Download VoiceThered for Windows">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
         Download VoiceThered
@@ -308,9 +310,9 @@
     const btnLogout = document.getElementById("btn-logout");
     const openLogin = document.getElementById("open-login");
     const openRegister = document.getElementById("open-register");
-    const downloadLocked = document.getElementById("download-locked");
+    const downloadGate = document.getElementById("download-gate");
     const downloadUnlocked = document.getElementById("download-unlocked");
-    const ctaLocked = document.getElementById("cta-download-locked");
+    const ctaGate = document.getElementById("cta-gate");
     const ctaUnlocked = document.getElementById("cta-download-unlocked");
     const ctaSub = document.getElementById("cta-sub");
 
@@ -321,9 +323,9 @@
       btnLogout.classList.remove("hidden");
       openLogin.classList.add("hidden");
       openRegister.classList.add("hidden");
-      downloadLocked.classList.add("hidden");
+      downloadGate.classList.add("hidden");
       downloadUnlocked.classList.remove("hidden");
-      ctaLocked.classList.add("hidden");
+      ctaGate.classList.add("hidden");
       ctaUnlocked.classList.remove("hidden");
       ctaSub.textContent = "One download. Start talking in under a minute.";
     }
@@ -334,11 +336,11 @@
       btnLogout.classList.add("hidden");
       openLogin.classList.remove("hidden");
       openRegister.classList.remove("hidden");
-      downloadLocked.classList.remove("hidden");
+      downloadGate.classList.remove("hidden");
       downloadUnlocked.classList.add("hidden");
-      ctaLocked.classList.remove("hidden");
+      ctaGate.classList.remove("hidden");
       ctaUnlocked.classList.add("hidden");
-      ctaSub.textContent = "Log in to download. Start talking in under a minute.";
+      ctaSub.textContent = "Create an account and log in to get started.";
     }
 
     // Restore session
@@ -347,9 +349,11 @@
 
     btnLogout.onclick = () => setLoggedOut();
 
-    // Locked download buttons open login modal
-    downloadLocked.onclick = () => loginModal.classList.remove("hidden");
-    ctaLocked.onclick = () => loginModal.classList.remove("hidden");
+    // Gate buttons open modals
+    document.getElementById("gate-login").onclick = () => loginModal.classList.remove("hidden");
+    document.getElementById("gate-register").onclick = () => registerModal.classList.remove("hidden");
+    document.getElementById("cta-gate-login").onclick = () => loginModal.classList.remove("hidden");
+    document.getElementById("cta-gate-register").onclick = () => registerModal.classList.remove("hidden");
 
     // Login modal
     const loginModal = document.getElementById("login-modal");
