@@ -145,11 +145,41 @@
     </div>
   </div>
 
+  <!-- Floating particles -->
+  <div class="particles" id="particles" aria-hidden="true"></div>
+
   <main>
     <section class="hero">
-      <span class="hero-eyebrow">Stay Connected</span>
-      <h1>Voice chat that<br/><span class="h1-accent">JUST WORKS.</span></h1>
-      <p class="hero-sub">Crystal-clear audio, screen sharing, and text chat — in one lightweight app. No bloat. No tracking.</p>
+      <!-- Animated waveform from brand -->
+      <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 400 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.6"/>
+              <stop offset="50%" stop-color="#fb7185"/>
+              <stop offset="100%" stop-color="#fda4af" stop-opacity="0.6"/>
+            </linearGradient>
+          </defs>
+          <rect class="wave-bar" x="40"  y="15" width="6" height="50" rx="3" fill="url(#wave-grad)" opacity="0.5"/>
+          <rect class="wave-bar" x="56"  y="22" width="6" height="36" rx="3" fill="url(#wave-grad)" opacity="0.6"/>
+          <rect class="wave-bar" x="72"  y="10" width="6" height="60" rx="3" fill="url(#wave-grad)" opacity="0.7"/>
+          <rect class="wave-bar" x="88"  y="25" width="6" height="30" rx="3" fill="url(#wave-grad)" opacity="0.6"/>
+          <rect class="wave-bar" x="104" y="18" width="6" height="44" rx="3" fill="url(#wave-grad)" opacity="0.8"/>
+          <path class="wave-line" d="M 130 40 C 155 15, 175 15, 200 40 C 225 65, 245 65, 270 40" stroke="url(#wave-grad)" stroke-width="4" stroke-linecap="round"/>
+          <circle class="wave-dot" cx="130" cy="40" r="5" fill="#fda4af"/>
+          <circle class="wave-dot" cx="200" cy="40" r="7" fill="#f43f5e"/>
+          <circle class="wave-dot" cx="270" cy="40" r="5" fill="#fda4af"/>
+          <rect class="wave-bar" x="290" y="25" width="6" height="30" rx="3" fill="url(#wave-grad)" opacity="0.6"/>
+          <rect class="wave-bar" x="306" y="10" width="6" height="60" rx="3" fill="url(#wave-grad)" opacity="0.7"/>
+          <rect class="wave-bar" x="322" y="22" width="6" height="36" rx="3" fill="url(#wave-grad)" opacity="0.6"/>
+          <rect class="wave-bar" x="338" y="18" width="6" height="44" rx="3" fill="url(#wave-grad)" opacity="0.8"/>
+          <rect class="wave-bar" x="354" y="15" width="6" height="50" rx="3" fill="url(#wave-grad)" opacity="0.5"/>
+        </svg>
+      </div>
+
+      <span class="hero-eyebrow anim-in">Stay Connected</span>
+      <h1 class="anim-in" style="animation-delay: 0.1s">Voice chat that<br/><span class="h1-accent">JUST WORKS.</span></h1>
+      <p class="hero-sub anim-in" style="animation-delay: 0.2s">Crystal-clear audio, screen sharing, and text chat — in one lightweight app. No bloat. No tracking.</p>
 
       <div class="hero-actions">
         <!-- Logged out: prompt to log in -->
@@ -180,7 +210,7 @@
     </section>
 
     <!-- Theme showcase -->
-    <section class="themes-section">
+    <section class="themes-section reveal">
       <h2>Make it yours</h2>
       <p class="themes-sub">8 built-in themes. Pick the vibe that fits you.</p>
 
@@ -256,7 +286,7 @@
       </div>
     </section>
 
-    <section class="features">
+    <section class="features reveal">
       <div class="feature">
         <div class="feature-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm-1-9a1 1 0 0 1 2 0v6a1 1 0 0 1-2 0V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
@@ -280,17 +310,9 @@
       </div>
     </section>
 
-    <section class="cta-band">
+    <section class="cta-band reveal">
       <h2>Ready to get the group back together?</h2>
-      <p id="cta-sub">Create an account and log in to get started.</p>
-      <div class="cta-gate" id="cta-gate">
-        <button class="btn-primary" id="cta-gate-login">Log In</button>
-        <button class="btn-ghost" id="cta-gate-register">Create Account</button>
-      </div>
-      <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary hidden" id="cta-download-unlocked" aria-label="Download VoiceThered for Windows">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-        Download VoiceThered
-      </a>
+      <p>Create an account, log in, and start talking in under a minute.</p>
     </section>
   </main>
 
@@ -356,10 +378,6 @@
     const downloadGate = document.getElementById("download-gate");
     const downloadUnlocked = document.getElementById("download-unlocked");
     const welcomeText = document.getElementById("welcome-text");
-    const ctaGate = document.getElementById("cta-gate");
-    const ctaUnlocked = document.getElementById("cta-download-unlocked");
-    const ctaSub = document.getElementById("cta-sub");
-
     function setLoggedIn(displayName) {
       sessionStorage.setItem("vt_user", displayName);
       navUser.textContent = displayName;
@@ -371,9 +389,6 @@
       welcomeText.textContent = `Welcome back, ${displayName}!`;
       welcomeText.classList.remove("hidden");
       downloadUnlocked.classList.remove("hidden");
-      ctaGate.classList.add("hidden");
-      ctaUnlocked.classList.remove("hidden");
-      ctaSub.textContent = "One download. Start talking in under a minute.";
     }
 
     function setLoggedOut() {
@@ -385,9 +400,6 @@
       downloadGate.classList.remove("hidden");
       welcomeText.classList.add("hidden");
       downloadUnlocked.classList.add("hidden");
-      ctaGate.classList.remove("hidden");
-      ctaUnlocked.classList.add("hidden");
-      ctaSub.textContent = "Create an account and log in to get started.";
     }
 
     // Restore session
@@ -399,8 +411,6 @@
     // Gate buttons open modals
     document.getElementById("gate-login").onclick = () => loginModal.classList.remove("hidden");
     document.getElementById("gate-register").onclick = () => registerModal.classList.remove("hidden");
-    document.getElementById("cta-gate-login").onclick = () => loginModal.classList.remove("hidden");
-    document.getElementById("cta-gate-register").onclick = () => registerModal.classList.remove("hidden");
 
     // Login modal
     const loginModal = document.getElementById("login-modal");
@@ -608,6 +618,38 @@
         resetSubmit.textContent = "Reset Password";
       }
     };
+
+    // ── Floating particles ────────────────────────────────────────
+    const particleContainer = document.getElementById("particles");
+    for (let i = 0; i < 30; i++) {
+      const p = document.createElement("div");
+      p.className = "particle";
+      const size = Math.random() * 4 + 2;
+      const x = Math.random() * 100;
+      const duration = Math.random() * 20 + 15;
+      const delay = Math.random() * -20;
+      const opacity = Math.random() * 0.4 + 0.1;
+      p.style.cssText = `
+        width: ${size}px; height: ${size}px;
+        left: ${x}%;
+        animation-duration: ${duration}s;
+        animation-delay: ${delay}s;
+        opacity: ${opacity};
+      `;
+      particleContainer.appendChild(p);
+    }
+
+    // ── Scroll reveal ─────────────────────────────────────────────
+    const revealEls = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

@@ -67,6 +67,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      animation: fadeSlideDown 0.5s ease-out both;
     }
 
     .nav-brand {
@@ -923,6 +924,144 @@
     }
 
     .hidden { display: none !important; }
+
+    /* ── Hero waveform animation ────────────────────────────── */
+    .hero-wave {
+      width: min(420px, 80vw);
+      margin-bottom: 2rem;
+      animation: waveIn 1s ease-out 0.3s both;
+      filter: drop-shadow(0 0 20px rgba(244, 63, 94, 0.3));
+    }
+
+    @keyframes waveIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .wave-bar {
+      animation: barPulse 2s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .wave-bar:nth-child(1)  { animation-delay: 0s; }
+    .wave-bar:nth-child(2)  { animation-delay: 0.15s; }
+    .wave-bar:nth-child(3)  { animation-delay: 0.3s; }
+    .wave-bar:nth-child(4)  { animation-delay: 0.45s; }
+    .wave-bar:nth-child(5)  { animation-delay: 0.6s; }
+    .wave-bar:nth-child(9)  { animation-delay: 0.6s; }
+    .wave-bar:nth-child(10) { animation-delay: 0.45s; }
+    .wave-bar:nth-child(11) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(12) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(13) { animation-delay: 0s; }
+
+    @keyframes barPulse {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.5); }
+    }
+
+    .wave-line {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: drawLine 1.5s ease-out 0.6s forwards;
+    }
+
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .wave-dot {
+      animation: dotPop 0.4s ease-out both;
+    }
+    .wave-dot:nth-child(6) { animation-delay: 0.8s; }
+    .wave-dot:nth-child(7) { animation-delay: 1.0s; }
+    .wave-dot:nth-child(8) { animation-delay: 1.2s; }
+
+    @keyframes dotPop {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* ── Hero entrance animations ───────────────────────────── */
+    .anim-in {
+      animation: fadeSlideUp 0.7s ease-out both;
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── Scroll reveal ──────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger feature cards */
+    .features.revealed .feature:nth-child(1) { transition-delay: 0s; }
+    .features.revealed .feature:nth-child(2) { transition-delay: 0.15s; }
+    .features.revealed .feature:nth-child(3) { transition-delay: 0.3s; }
+
+    .features .feature {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .features.revealed .feature {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Floating particles ─────────────────────────────────── */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      bottom: -10px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: var(--particle-opacity, 0.3);
+      }
+      90% {
+        opacity: var(--particle-opacity, 0.3);
+      }
+      100% {
+        transform: translateY(-110vh) translateX(40px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     @media (max-width: 768px) {
       .app-mockup { grid-template-columns: 1fr; height: auto; }
