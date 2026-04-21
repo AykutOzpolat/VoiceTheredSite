@@ -118,7 +118,8 @@
             <button class="btn-ghost" id="gate-register">Create Account</button>
           </div>
         </div>
-        <!-- Logged in: actual download -->
+        <!-- Logged in: welcome + download -->
+        <p class="welcome-text hidden" id="welcome-text"></p>
         <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary hidden" id="download-unlocked" aria-label="Download VoiceThered for Windows">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           Download for Windows
@@ -312,6 +313,7 @@
     const openRegister = document.getElementById("open-register");
     const downloadGate = document.getElementById("download-gate");
     const downloadUnlocked = document.getElementById("download-unlocked");
+    const welcomeText = document.getElementById("welcome-text");
     const ctaGate = document.getElementById("cta-gate");
     const ctaUnlocked = document.getElementById("cta-download-unlocked");
     const ctaSub = document.getElementById("cta-sub");
@@ -324,6 +326,8 @@
       openLogin.classList.add("hidden");
       openRegister.classList.add("hidden");
       downloadGate.classList.add("hidden");
+      welcomeText.textContent = `Welcome back, ${displayName}!`;
+      welcomeText.classList.remove("hidden");
       downloadUnlocked.classList.remove("hidden");
       ctaGate.classList.add("hidden");
       ctaUnlocked.classList.remove("hidden");
@@ -337,6 +341,7 @@
       openLogin.classList.remove("hidden");
       openRegister.classList.remove("hidden");
       downloadGate.classList.remove("hidden");
+      welcomeText.classList.add("hidden");
       downloadUnlocked.classList.add("hidden");
       ctaGate.classList.remove("hidden");
       ctaUnlocked.classList.add("hidden");

@@ -907,6 +907,13 @@
       padding: 0.85rem 1.5rem;
     }
 
+    .welcome-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent-soft);
+      margin-bottom: 0.25rem;
+    }
+
     .download-gate-buttons,
     .cta-gate {
       display: flex;
