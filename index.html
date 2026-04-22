@@ -43,10 +43,17 @@
     </div>
   </nav>
 
-  <!-- Register Modal -->
-  <div class="modal-overlay hidden" id="register-modal">
-    <div class="modal">
-      <button class="modal-close" id="close-register" aria-label="Close">&times;</button>
+  <!-- Create Account Page (shown via #create-account) -->
+  <div class="lp-page hidden" id="create-account-page">
+    <a href="#" class="lp-brand" id="brand-from-register" aria-label="VoiceThered home">
+      <svg class="brand-mark" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"
+              fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="3.2" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
+    </a>
+    <div class="lp-card">
       <h2 class="modal-title">Create your account</h2>
       <p class="modal-sub">Join VoiceThered — it's free.</p>
       <form id="register-form" autocomplete="off">
@@ -72,6 +79,7 @@
         <button type="submit" class="btn-primary btn-submit" id="reg-submit">
           Create Account
         </button>
+        <p class="form-switch">Already have an account? <a href="#" id="switch-to-login-from-register">Log In</a></p>
       </form>
     </div>
   </div>
@@ -94,7 +102,7 @@
         <div id="login-error" class="form-error hidden"></div>
         <button type="submit" class="btn-primary btn-submit" id="login-submit">Log In</button>
         <p class="form-switch"><a href="#lost-password" id="switch-to-forgot">Forgot your password?</a></p>
-        <p class="form-switch">Don't have an account? <a href="#" id="switch-to-register">Create one</a></p>
+        <p class="form-switch">Don't have an account? <a href="#create-account" id="switch-to-register">Create one</a></p>
       </form>
     </div>
   </div>
@@ -448,7 +456,10 @@
 
     // Gate buttons open modals
     document.getElementById("gate-login").onclick = () => loginModal.classList.remove("hidden");
-    document.getElementById("gate-register").onclick = () => registerModal.classList.remove("hidden");
+    document.getElementById("gate-register").onclick = () => {
+      history.pushState(null, "", "#create-account");
+      showCreateAccount();
+    };
 
     // Login modal
     const loginModal = document.getElementById("login-modal");
@@ -465,7 +476,8 @@
     switchToRegister.onclick = (e) => {
       e.preventDefault();
       loginModal.classList.add("hidden");
-      registerModal.classList.remove("hidden");
+      history.pushState(null, "", "#create-account");
+      showCreateAccount();
     };
 
     loginForm.onsubmit = async (e) => {
@@ -499,18 +511,43 @@
       }
     };
 
-    // Register modal
-    const registerModal = document.getElementById("register-modal");
-    const openBtn = document.getElementById("open-register");
-    const closeBtn = document.getElementById("close-register");
+    // Create Account page
+    const caPage = document.getElementById("create-account-page");
     const regForm = document.getElementById("register-form");
     const regError = document.getElementById("reg-error");
     const regSuccess = document.getElementById("reg-success");
     const regSubmit = document.getElementById("reg-submit");
 
-    openBtn.onclick = () => registerModal.classList.remove("hidden");
-    closeBtn.onclick = () => registerModal.classList.add("hidden");
-    registerModal.onclick = (e) => { if (e.target === registerModal) registerModal.classList.add("hidden"); };
+    function showCreateAccount() {
+      caPage.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideCreateAccount() {
+      caPage.classList.add("hidden");
+      document.body.style.overflow = "";
+      history.replaceState(null, "", location.pathname);
+    }
+
+    openRegister.onclick = () => {
+      history.pushState(null, "", "#create-account");
+      showCreateAccount();
+    };
+
+    document.getElementById("brand-from-register").onclick = (e) => {
+      e.preventDefault();
+      hideCreateAccount();
+    };
+
+    document.getElementById("switch-to-login-from-register").onclick = (e) => {
+      e.preventDefault();
+      hideCreateAccount();
+      loginModal.classList.remove("hidden");
+    };
+
+    if (location.hash === "#create-account") {
+      showCreateAccount();
+    }
 
     regForm.onsubmit = async (e) => {
       e.preventDefault();
@@ -585,8 +622,11 @@
     window.addEventListener("hashchange", () => {
       if (location.hash === "#lost-password") {
         showLostPassword();
+      } else if (location.hash === "#create-account") {
+        showCreateAccount();
       } else {
         hideLostPassword();
+        hideCreateAccount();
       }
     });
 
