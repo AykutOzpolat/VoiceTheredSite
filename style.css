@@ -686,6 +686,43 @@
     }
     .footer-copy a:hover { text-decoration: underline; }
 
+    /* Privacy Policy */
+    .privacy-section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+    .privacy-content {
+      position: relative;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      color: var(--text-sec);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .privacy-content h2 {
+      color: var(--text);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .privacy-content h3 {
+      color: var(--text);
+      font-size: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.4rem;
+    }
+    .privacy-content ul {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0;
+    }
+    .privacy-content a {
+      color: var(--accent-soft);
+      text-decoration: none;
+    }
+    .privacy-content a:hover { text-decoration: underline; }
+
     /* Nav right group */
     .nav-right {
       display: flex;

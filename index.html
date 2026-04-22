@@ -24,11 +24,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="dev-banner">
-    🚧 VoiceThered is currently under active development. Some features may not be available yet.
-  </div>
-
-  <div class="bg-glow"></div>
+<div class="bg-glow"></div>
 
   <nav>
     <a href="#" class="nav-brand" aria-label="VoiceThered home">
@@ -40,8 +36,7 @@
       <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
     </a>
     <div class="nav-right">
-      <span class="nav-status">In Development</span>
-      <button class="btn-login" id="open-login">Log In</button>
+<button class="btn-login" id="open-login">Log In</button>
       <button class="btn-register" id="open-register">Create Account</button>
       <span class="nav-user hidden" id="nav-user"></span>
       <button class="btn-logout hidden" id="btn-logout">Log Out</button>
@@ -316,13 +311,45 @@
     </section>
   </main>
 
+  <!-- Privacy Policy -->
+  <section class="privacy-section hidden" id="privacy-section">
+    <div class="privacy-content">
+      <button class="modal-close" id="close-privacy" aria-label="Close">&times;</button>
+      <h2>Privacy Policy</h2>
+      <p><strong>Last updated:</strong> April 21, 2026</p>
+
+      <h3>What we collect</h3>
+      <p>When you create an account, we store your display name, email address, and a securely hashed password. We do not collect or store any other personal information.</p>
+
+      <h3>How we use your email</h3>
+      <p>Your email is used exclusively for:</p>
+      <ul>
+        <li>Account verification upon registration</li>
+        <li>Password reset requests</li>
+      </ul>
+      <p>We do not send marketing emails, newsletters, or promotional content. All emails are triggered by your own actions.</p>
+
+      <h3>Data storage</h3>
+      <p>Your data is stored securely on AWS infrastructure (DynamoDB, S3) in the EU (Stockholm). Passwords are hashed with bcrypt and never stored in plain text.</p>
+
+      <h3>Third-party sharing</h3>
+      <p>We do not sell, trade, or share your personal data with third parties. We use Amazon SES solely for delivering transactional emails.</p>
+
+      <h3>Data deletion</h3>
+      <p>You may request deletion of your account and associated data by contacting us at <a href="mailto:support@voicethered.com">support@voicethered.com</a>.</p>
+
+      <h3>Contact</h3>
+      <p>For privacy-related questions, reach us at <a href="mailto:support@voicethered.com">support@voicethered.com</a>.</p>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-brand">
       <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"/><circle cx="20" cy="20" r="3.2" fill="currentColor" stroke="none"/></svg>
       <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
     </div>
     <p class="footer-tagline">Stay connected.</p>
-    <p class="footer-copy">© 2026 VoiceThered · Built with care</p>
+    <p class="footer-copy">© 2026 VoiceThered · <a href="#" id="open-privacy">Privacy Policy</a></p>
   </footer>
 
   <script>
@@ -618,6 +645,15 @@
         resetSubmit.textContent = "Reset Password";
       }
     };
+
+    // ── Privacy policy toggle ───────────────────────────────────
+    const privacySection = document.getElementById("privacy-section");
+    document.getElementById("open-privacy").onclick = (e) => {
+      e.preventDefault();
+      privacySection.classList.remove("hidden");
+      privacySection.scrollIntoView({ behavior: "smooth" });
+    };
+    document.getElementById("close-privacy").onclick = () => privacySection.classList.add("hidden");
 
     // ── Floating particles ────────────────────────────────────────
     const particleContainer = document.getElementById("particles");
