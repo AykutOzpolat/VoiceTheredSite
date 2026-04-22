@@ -1100,6 +1100,49 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Lost Password page */
+    .lp-page {
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .lp-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+      text-decoration: none;
+    }
+
+    .lp-brand .brand-mark {
+      color: var(--accent);
+      filter: drop-shadow(0 0 12px rgba(244, 63, 94, 0.45));
+    }
+
+    .lp-brand .brand-wordmark {
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .lp-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--border-strong);
+      border-radius: 1.25rem;
+      padding: 2.5rem 2rem 2rem;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 32px 80px -12px rgba(0, 0, 0, 0.6);
+      animation: modalIn 0.3s ease-out;
+    }
+
     @media (max-width: 768px) {
       .app-mockup { grid-template-columns: 1fr; height: auto; }
       .mock-sidebar { display: none; }
