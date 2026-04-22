@@ -413,6 +413,7 @@
     const downloadGate = document.getElementById("download-gate");
     const downloadUnlocked = document.getElementById("download-unlocked");
     const welcomeText = document.getElementById("welcome-text");
+    const ctaBand = document.querySelector(".cta-band");
     function setLoggedIn(displayName) {
       sessionStorage.setItem("vt_user", displayName);
       navUser.textContent = displayName;
@@ -424,6 +425,7 @@
       welcomeText.textContent = `Welcome back, ${displayName}!`;
       welcomeText.classList.remove("hidden");
       downloadUnlocked.classList.remove("hidden");
+      ctaBand.classList.add("hidden");
     }
 
     function setLoggedOut() {
@@ -435,6 +437,7 @@
       downloadGate.classList.remove("hidden");
       welcomeText.classList.add("hidden");
       downloadUnlocked.classList.add("hidden");
+      ctaBand.classList.remove("hidden");
     }
 
     // Restore session
