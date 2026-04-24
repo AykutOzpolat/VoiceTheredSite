@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VoiceThered — Stay Connected. Crystal-Clear Voice Chat for Groups.</title>
-  <meta name="description" content="Free, lightweight voice chat for friends and teams. Crystal-clear audio, screen sharing, text chat. No bloat. No tracking." />
+  <meta name="description"
+    content="Free, lightweight voice chat for friends and teams. Crystal-clear audio, screen sharing, text chat. No bloat. No tracking." />
   <meta name="theme-color" content="#0a0a0f" />
 
   <!-- Favicon -->
@@ -13,30 +15,33 @@
 
   <!-- Open Graph / social -->
   <meta property="og:title" content="VoiceThered — Stay Connected" />
-  <meta property="og:description" content="Free, lightweight voice chat for groups. Crystal-clear audio, screen sharing, text chat. No bloat. No tracking." />
+  <meta property="og:description"
+    content="Free, lightweight voice chat for groups. Crystal-clear audio, screen sharing, text chat. No bloat. No tracking." />
   <meta property="og:image" content="voicethered_v2.svg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-<div class="bg-glow"></div>
+  <div class="bg-glow"></div>
 
   <nav>
     <a href="#" class="nav-brand" aria-label="VoiceThered home">
       <svg class="brand-mark" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"
-              fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="20" cy="20" r="3.2" fill="currentColor"/>
+        <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20" fill="none" stroke="currentColor" stroke-width="3"
+          stroke-linecap="round" />
+        <circle cx="20" cy="20" r="3.2" fill="currentColor" />
       </svg>
       <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
     </a>
     <div class="nav-right">
-<button class="btn-login" id="open-login">Log In</button>
+      <button class="btn-login" id="open-login">Log In</button>
       <button class="btn-register" id="open-register">Create Account</button>
       <span class="nav-user hidden" id="nav-user"></span>
       <button class="btn-logout hidden" id="btn-logout">Log Out</button>
@@ -47,9 +52,9 @@
   <div class="lp-page hidden" id="create-account-page">
     <a href="#" class="lp-brand" id="brand-from-register" aria-label="VoiceThered home">
       <svg class="brand-mark" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"
-              fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="20" cy="20" r="3.2" fill="currentColor"/>
+        <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20" fill="none" stroke="currentColor" stroke-width="3"
+          stroke-linecap="round" />
+        <circle cx="20" cy="20" r="3.2" fill="currentColor" />
       </svg>
       <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
     </a>
@@ -102,7 +107,8 @@
         <div id="login-error" class="form-error hidden"></div>
         <button type="submit" class="btn-primary btn-submit" id="login-submit">Log In</button>
         <p class="form-switch"><a href="#lost-password" id="switch-to-forgot">Forgot your password?</a></p>
-        <p class="form-switch">Don't have an account? <a href="#create-account" id="switch-to-register">Create one</a></p>
+        <p class="form-switch">Don't have an account? <a href="#create-account" id="switch-to-register">Create one</a>
+        </p>
       </form>
     </div>
   </div>
@@ -134,9 +140,9 @@
   <div class="lp-page hidden" id="lost-password-page">
     <a href="#" class="lp-brand" aria-label="VoiceThered home">
       <svg class="brand-mark" width="32" height="32" viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"
-              fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="20" cy="20" r="3.2" fill="currentColor"/>
+        <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20" fill="none" stroke="currentColor" stroke-width="3"
+          stroke-linecap="round" />
+        <circle cx="20" cy="20" r="3.2" fill="currentColor" />
       </svg>
       <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
     </a>
@@ -166,31 +172,107 @@
         <svg viewBox="0 0 400 80" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.6"/>
-              <stop offset="50%" stop-color="#fb7185"/>
-              <stop offset="100%" stop-color="#fda4af" stop-opacity="0.6"/>
+              <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.6" />
+              <stop offset="50%" stop-color="#fb7185" />
+              <stop offset="100%" stop-color="#fda4af" stop-opacity="0.6" />
             </linearGradient>
           </defs>
-          <rect class="wave-bar" x="40"  y="15" width="6" height="50" rx="3" fill="url(#wave-grad)" opacity="0.5"/>
-          <rect class="wave-bar" x="56"  y="22" width="6" height="36" rx="3" fill="url(#wave-grad)" opacity="0.6"/>
-          <rect class="wave-bar" x="72"  y="10" width="6" height="60" rx="3" fill="url(#wave-grad)" opacity="0.7"/>
-          <rect class="wave-bar" x="88"  y="25" width="6" height="30" rx="3" fill="url(#wave-grad)" opacity="0.6"/>
-          <rect class="wave-bar" x="104" y="18" width="6" height="44" rx="3" fill="url(#wave-grad)" opacity="0.8"/>
-          <path class="wave-line" d="M 130 40 C 155 15, 175 15, 200 40 C 225 65, 245 65, 270 40" stroke="url(#wave-grad)" stroke-width="4" stroke-linecap="round"/>
-          <circle class="wave-dot" cx="130" cy="40" r="5" fill="#fda4af"/>
-          <circle class="wave-dot" cx="200" cy="40" r="7" fill="#f43f5e"/>
-          <circle class="wave-dot" cx="270" cy="40" r="5" fill="#fda4af"/>
-          <rect class="wave-bar" x="290" y="25" width="6" height="30" rx="3" fill="url(#wave-grad)" opacity="0.6"/>
-          <rect class="wave-bar" x="306" y="10" width="6" height="60" rx="3" fill="url(#wave-grad)" opacity="0.7"/>
-          <rect class="wave-bar" x="322" y="22" width="6" height="36" rx="3" fill="url(#wave-grad)" opacity="0.6"/>
-          <rect class="wave-bar" x="338" y="18" width="6" height="44" rx="3" fill="url(#wave-grad)" opacity="0.8"/>
-          <rect class="wave-bar" x="354" y="15" width="6" height="50" rx="3" fill="url(#wave-grad)" opacity="0.5"/>
+
+          <!-- LEFT BARS -->
+          <g fill="url(#wave-grad)">
+            <rect x="40" y="15" width="6" height="50" rx="3" opacity="0.5">
+              <animate attributeName="height" values="50;30;60;50" dur="1.2s" repeatCount="indefinite" />
+              <animate attributeName="y" values="15;25;5;15" dur="1.2s" repeatCount="indefinite" />
+            </rect>
+
+            <rect x="56" y="22" width="6" height="36" rx="3" opacity="0.6">
+              <animate attributeName="height" values="36;50;20;36" dur="1.1s" repeatCount="indefinite" />
+              <animate attributeName="y" values="22;10;30;22" dur="1.1s" repeatCount="indefinite" />
+            </rect>
+
+            <rect x="72" y="10" width="6" height="60" rx="3" opacity="0.7">
+              <animate attributeName="height" values="60;30;70;60" dur="1.3s" repeatCount="indefinite" />
+              <animate attributeName="y" values="10;25;5;10" dur="1.3s" repeatCount="indefinite" />
+            </rect>
+
+            <rect x="88" y="25" width="6" height="30" rx="3" opacity="0.6">
+              <animate attributeName="height" values="30;55;25;30" dur="1s" repeatCount="indefinite" />
+              <animate attributeName="y" values="25;5;30;25" dur="1s" repeatCount="indefinite" />
+            </rect>
+
+            <rect x="104" y="18" width="6" height="44" rx="3" opacity="0.8">
+              <animate attributeName="height" values="44;60;30;44" dur="1.4s" repeatCount="indefinite" />
+              <animate attributeName="y" values="18;5;25;18" dur="1.4s" repeatCount="indefinite" />
+            </rect>
+          </g>
+
+          <!-- RIGHT BARS -->
+          <g fill="url(#wave-grad)">
+            <rect x="290" y="25" width="6" height="30" rx="3" opacity="0.6">
+              <animate attributeName="height" values="30;55;25;30" dur="1s" repeatCount="indefinite" />
+              <animate attributeName="y" values="25;5;30;25" dur="1s" repeatCount="indefinite" />
+            </rect>
+
+            <rect x="306" y="10" width="6" height="60" rx="3" opacity="0.7">
+              <animate attributeName="height" values="60;30;70;60" dur="1.3s" repeatCount="indefinite" />
+              <animate attributeName="y" values="10;25;5;10" dur="1.3s" repeatCount="indefinite" />
+            </rect>
+
+            <rect x="322" y="22" width="6" height="36" rx="3" opacity="0.6">
+              <animate attributeName="height" values="36;50;20;36" dur="1.1s" repeatCount="indefinite" />
+              <animate attributeName="y" values="22;10;30;22" dur="1.1s" repeatCount="indefinite" />
+            </rect>
+
+            <rect x="338" y="18" width="6" height="44" rx="3" opacity="0.8">
+              <animate attributeName="height" values="44;60;30;44" dur="1.4s" repeatCount="indefinite" />
+              <animate attributeName="y" values="18;5;25;18" dur="1.4s" repeatCount="indefinite" />
+            </rect>
+
+            <rect x="354" y="15" width="6" height="50" rx="3" opacity="0.5">
+              <animate attributeName="height" values="50;30;60;50" dur="1.2s" repeatCount="indefinite" />
+              <animate attributeName="y" values="15;25;5;15" dur="1.2s" repeatCount="indefinite" />
+            </rect>
+          </g>
+
+          <!-- WAVE -->
+          <path d="M130 40 C155 40,175 40,200 40 C225 40,245 40,270 40" stroke="url(#wave-grad)" stroke-width="4"
+            fill="none" stroke-linecap="round">
+            <animate attributeName="d" dur="2.4s" repeatCount="indefinite" values="
+      M130 40 C155 40,175 40,200 40 C225 40,245 40,270 40;
+      M130 40 C155 10,175 10,200 40 C225 70,245 70,270 40;
+      M130 40 C155 40,175 40,200 40 C225 40,245 40,270 40
+      " />
+          </path>
+
+          <!-- LEFT HANDSHAKE DOT -->
+          <circle r="5" fill="#fda4af">
+            <animate attributeName="cx" dur="2.4s" repeatCount="indefinite" values="110;160;200;160;110"
+              keyTimes="0;0.25;0.5;0.75;1" />
+            <animate attributeName="cy" dur="2.4s" repeatCount="indefinite" values="40;20;40;20;40"
+              keyTimes="0;0.25;0.5;0.75;1" />
+          </circle>
+
+          <!-- RIGHT HANDSHAKE DOT -->
+          <circle r="5" fill="#fda4af">
+            <animate attributeName="cx" dur="2.4s" repeatCount="indefinite" values="290;240;200;240;290"
+              keyTimes="0;0.25;0.5;0.75;1" />
+            <animate attributeName="cy" dur="2.4s" repeatCount="indefinite" values="40;60;40;60;40"
+              keyTimes="0;0.25;0.5;0.75;1" />
+          </circle>
+
+          <!-- CENTER CONNECTION POINT -->
+          <circle cx="200" cy="40" r="7" fill="#f43f5e">
+            <animate attributeName="r" values="7;12;7" dur="2.4s" repeatCount="indefinite" />
+          </circle>
         </svg>
       </div>
 
+
       <span class="hero-eyebrow anim-in">Stay Connected</span>
-      <h1 class="anim-in" style="animation-delay: 0.1s">Voice chat that<br/><span class="h1-accent">JUST WORKS.</span></h1>
-      <p class="hero-sub anim-in" style="animation-delay: 0.2s">Crystal-clear audio, screen sharing, and text chat — in one lightweight app. No bloat. No tracking.</p>
+      <h1 class="anim-in" style="animation-delay: 0.1s">Voice chat that<br /><span class="h1-accent">JUST WORKS.</span>
+      </h1>
+      <p class="hero-sub anim-in" style="animation-delay: 0.2s">Crystal-clear audio, screen sharing, and text chat — in
+        one lightweight app. No bloat. No tracking.</p>
 
       <div class="hero-actions">
         <!-- Logged out: prompt to log in -->
@@ -203,8 +285,11 @@
         </div>
         <!-- Logged in: welcome + download -->
         <p class="welcome-text hidden" id="welcome-text"></p>
-        <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip" class="btn-primary hidden" id="download-unlocked" aria-label="Download VoiceThered for Windows">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        <a href="https://github.com/AykutOzpolat/VoiceTheredSite/releases/download/v1.0.8/VoiceThered-win.zip"
+          class="btn-primary hidden" id="download-unlocked" aria-label="Download VoiceThered for Windows">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+          </svg>
           Download for Windows
           <span class="btn-meta">Free · v1.0.8</span>
         </a>
@@ -232,7 +317,11 @@
           <!-- Sidebar -->
           <div class="mock-sidebar">
             <div class="mock-sidebar-header">
-              <svg width="16" height="16" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" style="opacity:0.85"><path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"/><circle cx="20" cy="20" r="3.2" fill="currentColor" stroke="none"/></svg>
+              <svg width="16" height="16" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" style="opacity:0.85">
+                <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20" />
+                <circle cx="20" cy="20" r="3.2" fill="currentColor" stroke="none" />
+              </svg>
               <span>VoiceThered</span>
             </div>
             <div class="mock-user mock-user-active">
@@ -250,20 +339,30 @@
             </div>
             <div class="mock-controls">
               <div class="mock-ctrl-btn mock-ctrl-mic">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" />
+                </svg>
               </div>
               <div class="mock-ctrl-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
+                </svg>
               </div>
               <div class="mock-ctrl-btn mock-ctrl-leave">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08a.956.956 0 0 1 0-1.36C3.69 8.68 7.65 7 12 7s8.31 1.68 11.71 4.72c.38.36.38.96 0 1.36l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.11-.7-.28a11.27 11.27 0 0 0-2.67-1.85.996.996 0 0 1-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 9c-1.6 0-3.15.25-4.6.72v3.1c0 .39-.23.74-.56.9-.98.49-1.87 1.12-2.66 1.85-.18.18-.43.28-.7.28-.28 0-.53-.11-.71-.29L.29 13.08a.956.956 0 0 1 0-1.36C3.69 8.68 7.65 7 12 7s8.31 1.68 11.71 4.72c.38.36.38.96 0 1.36l-2.48 2.48c-.18.18-.43.29-.71.29-.27 0-.52-.11-.7-.28a11.27 11.27 0 0 0-2.67-1.85.996.996 0 0 1-.56-.9v-3.1C15.15 9.25 13.6 9 12 9z" />
+                </svg>
               </div>
             </div>
           </div>
           <!-- Chat area -->
           <div class="mock-chat">
             <div class="mock-chat-header">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.5"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.5">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+              </svg>
               <span>Chat</span>
             </div>
             <div class="mock-messages">
@@ -300,21 +399,29 @@
     <section class="features reveal">
       <div class="feature">
         <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm-1-9a1 1 0 0 1 2 0v6a1 1 0 0 1-2 0V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm-1-9a1 1 0 0 1 2 0v6a1 1 0 0 1-2 0V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
+          </svg>
         </div>
         <h3>Crystal-clear voice</h3>
         <p>Low-latency, high-quality audio. Join a channel and start talking — no setup dance.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
+          </svg>
         </div>
         <h3>One-click screen share</h3>
         <p>Share your screen instantly. Perfect for gaming, co-working, or movie nights with friends.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" />
+          </svg>
         </div>
         <h3>Text chat, built in</h3>
         <p>Send messages, drop files, and react with emoji — right alongside your voice calls.</p>
@@ -335,7 +442,8 @@
       <p><strong>Last updated:</strong> April 21, 2026</p>
 
       <h3>What we collect</h3>
-      <p>When you create an account, we store your display name, email address, and a securely hashed password. We do not collect or store any other personal information.</p>
+      <p>When you create an account, we store your display name, email address, and a securely hashed password. We do
+        not collect or store any other personal information.</p>
 
       <h3>How we use your email</h3>
       <p>Your email is used exclusively for:</p>
@@ -343,25 +451,34 @@
         <li>Account verification upon registration</li>
         <li>Password reset requests</li>
       </ul>
-      <p>We do not send marketing emails, newsletters, or promotional content. All emails are triggered by your own actions.</p>
+      <p>We do not send marketing emails, newsletters, or promotional content. All emails are triggered by your own
+        actions.</p>
 
       <h3>Data storage</h3>
-      <p>Your data is stored securely on AWS infrastructure (DynamoDB, S3) in the EU (Stockholm). Passwords are hashed with bcrypt and never stored in plain text.</p>
+      <p>Your data is stored securely on AWS infrastructure (DynamoDB, S3) in the EU (Stockholm). Passwords are hashed
+        with bcrypt and never stored in plain text.</p>
 
       <h3>Third-party sharing</h3>
-      <p>We do not sell, trade, or share your personal data with third parties. We use Amazon SES solely for delivering transactional emails.</p>
+      <p>We do not sell, trade, or share your personal data with third parties. We use Amazon SES solely for delivering
+        transactional emails.</p>
 
       <h3>Data deletion</h3>
-      <p>You may request deletion of your account and associated data by contacting us at <a href="mailto:support@voicethered.com">support@voicethered.com</a>.</p>
+      <p>You may request deletion of your account and associated data by contacting us at <a
+          href="mailto:support@voicethered.com">support@voicethered.com</a>.</p>
 
       <h3>Contact</h3>
-      <p>For privacy-related questions, reach us at <a href="mailto:support@voicethered.com">support@voicethered.com</a>.</p>
+      <p>For privacy-related questions, reach us at <a
+          href="mailto:support@voicethered.com">support@voicethered.com</a>.</p>
     </div>
   </section>
 
   <footer>
     <div class="footer-brand">
-      <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20"/><circle cx="20" cy="20" r="3.2" fill="currentColor" stroke="none"/></svg>
+      <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3"
+        stroke-linecap="round" aria-hidden="true">
+        <path d="M 4 20 C 9 10, 15 10, 20 20 C 25 30, 31 30, 36 20" />
+        <circle cx="20" cy="20" r="3.2" fill="currentColor" stroke="none" />
+      </svg>
       <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
     </div>
     <p class="footer-tagline">Stay connected.</p>
@@ -370,14 +487,14 @@
 
   <script>
     const themes = [
-      { id: "obsidian",   name: "Obsidian",   emoji: "🖤", bg: "#0a0a0c", bgDark: "#131316", bgMed: "#1a1a1f", bgLight: "#242429", text: "#e8e6f0", textSec: "#a9a6b8", textMuted: "#7b7890", accent: "#8b5cf6", border: "rgba(255,255,255,0.08)" },
-      { id: "synthwave",  name: "Synthwave",  emoji: "🌆", bg: "#0f0620", bgDark: "#170a30", bgMed: "#1e1040", bgLight: "#2a1654", text: "#f0e6ff", textSec: "#c4a8ff", textMuted: "#9070d0", accent: "#ff2de0", border: "rgba(255,255,255,0.08)" },
-      { id: "terminal",   name: "Terminal",   emoji: "💻", bg: "#000000", bgDark: "#0a0a0a", bgMed: "#111111", bgLight: "#1a1a1a", text: "#00ff41", textSec: "#00cc33", textMuted: "#009926", accent: "#00ff41", border: "rgba(0,255,65,0.15)" },
-      { id: "sakura",     name: "Sakura",     emoji: "🌸", bg: "#f5e6ed", bgDark: "#fdf0f5", bgMed: "#fff7fa", bgLight: "#fce8f0", text: "#3d1f2e", textSec: "#6b4456", textMuted: "#8c6577", accent: "#e84393", border: "rgba(0,0,0,0.1)" },
-      { id: "arctic",     name: "Arctic",     emoji: "🧊", bg: "#dce8f0", bgDark: "#e8f1f8", bgMed: "#f0f7fc", bgLight: "#e0ecf5", text: "#1a2e3d", textSec: "#3d5a6e", textMuted: "#5e7f93", accent: "#0891b2", border: "rgba(0,0,0,0.1)" },
-      { id: "sunset",     name: "Sunset",     emoji: "🌅", bg: "#1a0f0a", bgDark: "#261812", bgMed: "#30201a", bgLight: "#3d2a22", text: "#fde8d8", textSec: "#d4a88a", textMuted: "#a87860", accent: "#f97316", border: "rgba(255,255,255,0.08)" },
-      { id: "cyberpunk",  name: "Cyberpunk",  emoji: "⚡",  bg: "#0c0c14", bgDark: "#12121e", bgMed: "#1a1a2e", bgLight: "#24243a", text: "#eaf0ff", textSec: "#a8b4d0", textMuted: "#6874a0", accent: "#fcee09", border: "rgba(255,255,255,0.08)" },
-      { id: "coffee",     name: "Coffee",     emoji: "☕",  bg: "#1b1410", bgDark: "#251c16", bgMed: "#2e2420", bgLight: "#3a2e28", text: "#f0e6dc", textSec: "#c4a882", textMuted: "#9a7e5c", accent: "#d4915e", border: "rgba(255,255,255,0.08)" },
+      { id: "obsidian", name: "Obsidian", emoji: "🖤", bg: "#0a0a0c", bgDark: "#131316", bgMed: "#1a1a1f", bgLight: "#242429", text: "#e8e6f0", textSec: "#a9a6b8", textMuted: "#7b7890", accent: "#8b5cf6", border: "rgba(255,255,255,0.08)" },
+      { id: "synthwave", name: "Synthwave", emoji: "🌆", bg: "#0f0620", bgDark: "#170a30", bgMed: "#1e1040", bgLight: "#2a1654", text: "#f0e6ff", textSec: "#c4a8ff", textMuted: "#9070d0", accent: "#ff2de0", border: "rgba(255,255,255,0.08)" },
+      { id: "terminal", name: "Terminal", emoji: "💻", bg: "#000000", bgDark: "#0a0a0a", bgMed: "#111111", bgLight: "#1a1a1a", text: "#00ff41", textSec: "#00cc33", textMuted: "#009926", accent: "#00ff41", border: "rgba(0,255,65,0.15)" },
+      { id: "sakura", name: "Sakura", emoji: "🌸", bg: "#f5e6ed", bgDark: "#fdf0f5", bgMed: "#fff7fa", bgLight: "#fce8f0", text: "#3d1f2e", textSec: "#6b4456", textMuted: "#8c6577", accent: "#e84393", border: "rgba(0,0,0,0.1)" },
+      { id: "arctic", name: "Arctic", emoji: "🧊", bg: "#dce8f0", bgDark: "#e8f1f8", bgMed: "#f0f7fc", bgLight: "#e0ecf5", text: "#1a2e3d", textSec: "#3d5a6e", textMuted: "#5e7f93", accent: "#0891b2", border: "rgba(0,0,0,0.1)" },
+      { id: "sunset", name: "Sunset", emoji: "🌅", bg: "#1a0f0a", bgDark: "#261812", bgMed: "#30201a", bgLight: "#3d2a22", text: "#fde8d8", textSec: "#d4a88a", textMuted: "#a87860", accent: "#f97316", border: "rgba(255,255,255,0.08)" },
+      { id: "cyberpunk", name: "Cyberpunk", emoji: "⚡", bg: "#0c0c14", bgDark: "#12121e", bgMed: "#1a1a2e", bgLight: "#24243a", text: "#eaf0ff", textSec: "#a8b4d0", textMuted: "#6874a0", accent: "#fcee09", border: "rgba(255,255,255,0.08)" },
+      { id: "coffee", name: "Coffee", emoji: "☕", bg: "#1b1410", bgDark: "#251c16", bgMed: "#2e2420", bgLight: "#3a2e28", text: "#f0e6dc", textSec: "#c4a882", textMuted: "#9a7e5c", accent: "#d4915e", border: "rgba(255,255,255,0.08)" },
     ];
 
     const pills = document.getElementById("theme-pills");
@@ -762,4 +879,5 @@
     revealEls.forEach(el => observer.observe(el));
   </script>
 </body>
+
 </html>
