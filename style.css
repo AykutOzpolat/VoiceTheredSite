@@ -1143,9 +1143,125 @@
       animation: modalIn 0.3s ease-out;
     }
 
+
+    /* ── Mobile breakpoint ─────────────────────────────────── */
     @media (max-width: 768px) {
-      .app-mockup { grid-template-columns: 1fr; height: auto; }
+      /* Compact nav buttons */
+      .nav-right { gap: 0.5rem; }
+
+      .btn-login {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      .btn-register {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+        box-shadow: none;
+      }
+
+      .btn-logout {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.75rem;
+      }
+
+      .nav-user {
+        font-size: 0.8rem;
+      }
+
+      /* Nav */
+      nav { padding: 1rem 1.25rem; }
+
+      /* Main */
+      main { padding: 1rem; }
+
+      /* Hero */
+      .hero { padding: 2rem 0 3rem; }
+
+      .hero-sub {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
+
+      .hero-wave { width: min(320px, 85vw); margin-bottom: 1.5rem; }
+
+      .download-gate-text {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+        text-align: center;
+      }
+
+      /* Theme section */
+      .theme-showcase { padding: 1rem; }
+
+      .theme-pills { gap: 0.35rem; }
+
+      .theme-pill {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.75rem;
+      }
+
+      .app-mockup {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
       .mock-sidebar { display: none; }
-      .features { grid-template-columns: 1fr; }
+
+      /* Features */
+      .features {
+        grid-template-columns: 1fr;
+        padding: 2rem 0;
+        gap: 1rem;
+      }
+
+      .feature { padding: 1.5rem; }
+
+      /* CTA band */
+      .cta-band {
+        padding: 2.5rem 1.25rem;
+        margin: 1rem 0 2rem;
+      }
+
+      /* Footer */
+      footer { padding: 2rem 1rem; }
+
+      /* Notify form */
       .notify-form { flex-direction: column; }
+
+      /* Lost password / create account pages */
+      .lp-page { padding: 1.5rem; }
+
+      .lp-card {
+        padding: 2rem 1.5rem 1.5rem;
+      }
+
+      /* Privacy */
+      .privacy-section { padding: 2rem 1rem; }
+      .privacy-content { padding: 1.5rem; }
+    }
+
+    /* ── Small phones ──────────────────────────────────────── */
+    @media (max-width: 400px) {
+      /* Hide wordmark, keep icon */
+      nav .nav-brand .brand-wordmark { display: none; }
+
+      h1 { font-size: 2rem; }
+
+      .hero-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.25em;
+      }
+
+      .btn-primary {
+        padding: 0.85rem 1.25rem;
+        font-size: 0.9rem;
+      }
+
+      .theme-pill {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.6rem;
+      }
+
+      .themes-section h2 { font-size: 1.5rem; }
     }

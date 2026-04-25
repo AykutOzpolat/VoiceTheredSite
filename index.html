@@ -40,7 +40,7 @@
       </svg>
       <span class="brand-wordmark"><span class="wm-voice">Voice</span><span class="wm-thered">thered</span></span>
     </a>
-    <div class="nav-right">
+    <div class="nav-right" id="nav-right">
       <button class="btn-login" id="open-login">Log In</button>
       <button class="btn-register" id="open-register">Create Account</button>
       <span class="nav-user hidden" id="nav-user"></span>
@@ -877,6 +877,7 @@
       });
     }, { threshold: 0.15 });
     revealEls.forEach(el => observer.observe(el));
+
   </script>
 </body>
 
